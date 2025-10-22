@@ -33,12 +33,12 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/logo.svg',
+		src: '/Logo.png',
 		alt: 'The tailwind astro theme',
-		text: 'Oobbau.'
+		text: ''
 	},
 	navItems: [
-		{ name: 'Products', link: '/products' },
+		{ name: 'Products', link: '/#products' },
 		// { name: 'Pricing', link: '/pricing' },
 		// { name: 'Features', link: '/features' },
 		// {

@@ -13,6 +13,7 @@ import Button from '../../ui/Button.astro'
 import { Icon } from 'astro-icon/components'
 
 // Props
+
 type Props = {
 	classes?: string
 }
@@ -20,22 +21,44 @@ const { classes } = Astro.props
 ---
 
 <Modal id="signup" classes={classes} title="Sign up">
-	<p class="mb-0">Enter your email bellow to get started with Oobbau.</p>
-	<Form>
+	<p class="mb-0">Enter your email below to get started with Oobbau.</p>
+
+	<Form id="signupForm">
 		<FormField>
 			<InputField type="email" id="email" label="Your Email" />
 		</FormField>
-		<Button style="primary" type="submit" classes="w-full" size="lg">Sign up</Button>
-		<div class="my-2 text-center">or</div>
-		<Button
-			style="primary"
-			type="submit"
-			classes="w-full"
-			size="lg"
-			classes="!bg-white w-full !text-neutral-500 border border-neutral-100"
-		>
-			<Icon name="google-logo" class="h-6 w-6" />
-			Signup with Google
-		</Button>
+
+		<Button style="primary" type="submit" classes="w-full" size="lg"> Sign up </Button>
 	</Form>
 </Modal>
+
+<script is:inline>
+	document.getElementById('signupForm').addEventListener('submit', async (e) => {
+		e.preventDefault() // prevent normal form submit
+
+		const email = document.getElementById('email').value
+
+		// BASIC VALIDATION
+		if (!email) {
+			alert('Please enter your email.')
+			return
+		}
+
+		// API CALL EXAMPLE
+		try {
+			const res = await fetch('https://n8n.zerocac.com/webhook/oobau-Inbound', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email })
+			})
+
+			if (!res.ok) throw new Error('Signup failed')
+
+			alert('Call booked')
+			window.location.href = '/'
+		} catch (err) {
+			console.error(err)
+			alert('Something went wrong. Try again.')
+		}
+	})
+</script>

@@ -21,12 +21,12 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Oobbau. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'Oobbau',
 	siteDescription:
-		'Oobbau is a design and development agency that specializes in creating beautiful and functional websites.',
-	ogImage: '/og.jpg',
+		"Oobbau helps you streamline productivity, enhance security, and seamlessly integrate with your favorite tools—all with thoughtfully designed modern web solutions.",
+	ogImage: '/og.png',
 	logo: {
-		src: '/logo.svg',
+		src: '/',
 		alt: 'Oobbau. logo'
 	},
 	canonical: true,

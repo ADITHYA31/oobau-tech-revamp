@@ -21,7 +21,7 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Oobbau',
+	siteTitle: 'Oobau',
 	siteDescription:
 		"Oobbau helps you streamline productivity, enhance security, and seamlessly integrate with your favorite tools—all with thoughtfully designed modern web solutions.",
 	ogImage: '/og.png',
@@ -31,6 +31,6 @@ export const configData: Config = {
 	},
 	canonical: true,
 	noindex: false,
-	mode: 'auto',
+	mode: 'dark',
 	scrollAnimations: true
 }
